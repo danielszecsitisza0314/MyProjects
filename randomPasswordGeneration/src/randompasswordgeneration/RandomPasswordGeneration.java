@@ -7,7 +7,7 @@ public class RandomPasswordGeneration {
     public static final String NUMBERS = "1234567890";
     public static final String SYMBOLS = "!.-?_&@";
 
-    public static String generatePassword(int lenght) {
+    public String generatePassword(int lenght) {
         String pass = "";
         int firstChar = 0;
         firstChar = getRandomNumber(0, 2);
@@ -40,7 +40,7 @@ public class RandomPasswordGeneration {
         return pass;
     }
 
-    public static String addLettersToString(int number, String letter) {
+    public String addLettersToString(int number, String letter) {
         String result = "";
         if (number == letter.length()) {
             result = result + letter.substring(number);
@@ -51,7 +51,7 @@ public class RandomPasswordGeneration {
 
     }
 
-    public static int getRandomNumber(int min, int max) {
+    public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
