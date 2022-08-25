@@ -173,16 +173,26 @@ public class MainFrame extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(jFrame, lotto.getWIN5());
             }
         } else {
-
+            if (lotto.getIsEmpty() == true) {
+                JOptionPane.showMessageDialog(jFrame, "Kérem adja meg az összes tippjét!");
+                clearData();
+            } else if (lotto.getIsEmpty() == false && lotto.getIsFallOutOFTheInterval() == false && lotto.getIsFiveDifferentnumbers() == true) {
+                JOptionPane.showMessageDialog(jFrame, "Az egyik szám nem esik 0-90 közzé! Kérem javítsa!");
+                clearData();
+            } else if (lotto.getIsEmpty() == false && lotto.getIsFallOutOFTheInterval() == true && lotto.getIsFiveDifferentnumbers() == false) {
+                JOptionPane.showMessageDialog(jFrame, "Nem 5 különböző számokat adott meg! Kérem javítsa!");
+                clearData();
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-    private void clearData(){
+    private void clearData() {
         youHint1.setText("");
         youHint2.setText("");
         youHint3.setText("");
         youHint4.setText("");
         youHint5.setText("");
     }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
